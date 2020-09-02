@@ -1,3 +1,5 @@
+package ru.netology;
+
 import org.junit.jupiter.api.*;
 import org.mockito.Mockito;
 
@@ -13,9 +15,9 @@ import ru.netology.sender.MessageSenderImpl;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Test {
+public class Test1 {
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void geoServiceImplTest() {
         GeoService geoService = new GeoServiceImpl();
         Location location = geoService.byIp("127.0.0.1");
@@ -34,7 +36,7 @@ public class Test {
         Assertions.assertEquals(location.getCountry(), Country.USA);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void localizationServiceImplTest(){
 
         LocalizationServiceImpl localizationService = new LocalizationServiceImpl();
@@ -45,7 +47,7 @@ public class Test {
         Assertions.assertEquals(message, "Welcome");
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     public void messageSenderImpleTest(){
         GeoServiceImpl geoServiceMock = Mockito.mock(GeoServiceImpl.class);
         Mockito
